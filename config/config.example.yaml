@@ -1,0 +1,43 @@
+# WorkLocal OpenWebUI Tools Configuration Example
+# Copy this file to config.yaml and update with your settings
+
+# API Configuration
+api:
+  base_url: "https://worklocal.app"
+  # Uncomment and add your API key
+  # api_key: "your-api-key-here"
+  timeout: 10
+  verify_ssl: true
+
+# Authentication settings
+authentication:
+  type: "bearer"  # Options: none, bearer, api_key, basic
+  header_name: "Authorization"
+  # For API key authentication:
+  # type: "api_key"
+  # header_name: "X-API-Key"
+
+# Rate limiting (if applicable)
+rate_limiting:
+  enabled: false
+  requests_per_minute: 60
+  burst_size: 10
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "worklocal_tools.log"
+  console: true
+
+# Feature flags
+features:
+  metrics_enabled: true
+  search_enabled: true
+  batch_operations: true
+  
+# Default values
+defaults:
+  resource_type: "server"
+  metric_timeframe: "1h"
+  search_limit: 50
